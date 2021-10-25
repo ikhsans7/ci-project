@@ -11,7 +11,7 @@ class matakuliah extends CI_Controller
        
     { 
         $this->load->library('form_validation');
-        $this->form_validation->set_rules('kode','kode Matakuliah','required|min_length[3]', [
+        $this->form_validation->set_rules('kode','kode Matakuliah','required|min_length[3]',[
             'required' => 'Kode Matakuliah Harus diisi',
             'min_length' => 'kode terlalu pendek'
         ]);
@@ -22,7 +22,7 @@ class matakuliah extends CI_Controller
         ]);
 
         if ($this->form_validation->run() != true) {
-            $this->load->view('view-form-matakuliah');
+            $this->load->view('view-from-matakuliah');
         } else {
             $data = [
                 'kode' => $this->input->post('kode'),
